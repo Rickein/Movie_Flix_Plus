@@ -108,10 +108,12 @@ function removerFavoritos(Id) {
                             text: "Filme removido com sucesso",
                             icon: "success",
                             showConfirmButton: false,
-                            timer: 2000
-                        });
+                            timer: 3000
+                        }).then((result) => {
+                            setTimeout(location.reload(), 4000)
+                        }
+                        );
 
-                        location.reload();
                     }
                     else {
                         Carregamento();
@@ -132,7 +134,7 @@ function removerFavoritos(Id) {
 async function SugerirFilme() {
 
     //https://docs.google.com/spreadsheets/d/1lh2lriyOjUw0c-XlVDWEIxhewJXt6dw4bJ7VRxIuRNU/edit?usp=sharing
-    
+
     var filme = $(`#Titulo`).val();
 
     if (filme == null || filme == "") {
